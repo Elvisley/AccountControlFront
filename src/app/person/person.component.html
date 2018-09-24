@@ -1,0 +1,176 @@
+<app-header></app-header>
+
+<!-- Page container -->
+<div class="page-container">
+
+<!-- Page content -->
+<div class="page-content">
+
+  <div class="sidebar sidebar-main">
+    <app-left-menu></app-left-menu>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- Page header -->
+    <div class="page-header page-header-default">
+      <div class="page-header-content">
+        <div class="page-title">
+          <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Pagina Inicial</span> - Clientes</h4>
+        </div>
+      </div>
+    </div>
+    <!-- /page header -->
+    <!-- Content area -->
+    <div class="content">
+
+        <sui-tabset>
+            <div class="ui top attached tabular menu">
+                <a class="item" suiTabHeader="1">Clientes Fisicos</a>
+                <a class="item" suiTabHeader="2">Clientes Juridicos</a>
+            </div>
+            <div class="ui bottom attached segment" suiTabContent="1">
+
+                <sui-dimmer class="inverted" [(isDimmed)]="segmentDimmedPhysical" [isClickable]="false">
+                    <div class="ui text loader">Aguarde...</div>
+                </sui-dimmer>
+
+                <div class="panel panel-flat">
+                    <div class="panel-body">
+                      <form  [formGroup]="formPersonPhysical" novalidate>
+                        <div class="row">
+
+                          <div class="col-md-8">
+                            <div class="form-group">
+                              <label>Nome</label>
+                              <input formControlName="full_name" type="text" class="form-control" placeholder="Nome do cliente">
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                <label>Documento</label>
+                                <input formControlName="document" type="text" class="form-control" placeholder="CPF">
+                              </div>
+                            </div>
+
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Data de Nascimento</label>
+                              <input formControlName="birth" type="date" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="text-center">
+                            <button type="submit" [disabled]="!formPersonPhysical.valid"  (click)="savePersonPhysical()" class="btn btn-success">Cadastrar</button>
+                          </div>
+
+
+                        </form>
+                      </div>
+
+                  </div>
+
+                  <div class="panel panel-flat" >
+
+
+                      <div class="table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Nome</th>
+                              <th>Documento</th>
+                              <th>CPF</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let cli of ListPersonPhysical">
+                              <td>{{ cli.id }}</td>
+                              <td>{{ cli.full_name }}</td>
+                              <td>{{ cli.document }}</td>
+                              <td>{{ cli.birth | date }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <br>
+                    </div>
+            </div>
+            <div class="ui bottom attached segment" suiTabContent="2">
+
+
+                <sui-dimmer class="inverted" [(isDimmed)]="segmentDimmedLegal" [isClickable]="false">
+                    <div class="ui text loader">Aguarde...</div>
+                </sui-dimmer>
+
+                <div class="panel panel-flat">
+                    <div class="panel-body">
+                      <form  [formGroup]="formPersonLegal" novalidate>
+                        <div class="row">
+
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Nome Fantasia</label>
+                              <input formControlName="fantasy_name" type="text" class="form-control" placeholder="Nome do cliente">
+                            </div>
+                          </div>
+
+                          <div class="col-md-8">
+                              <div class="form-group">
+                                <label>Razao Social</label>
+                                <input formControlName="social_reason" type="text" class="form-control" placeholder="Nome do cliente">
+                              </div>
+                            </div>
+
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                <label>Documento</label>
+                                <input formControlName="document" type="text" class="form-control" placeholder="CPF">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" [disabled]="!formPersonLegal.valid" (click)="savePersonLegal()" class="btn btn-success">Cadastrar</button>
+                          </div>
+
+                        </form>
+                      </div>
+
+                  </div>
+
+                  <div class="panel panel-flat" >
+
+
+                      <div class="table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Nome Fantasia</th>
+                              <th>Razao Social</th>
+                              <th>CNPF</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let cli of ListPersonLegal">
+                              <td>{{ cli.id }}</td>
+                              <td>{{ cli.fantasy_name }}</td>
+                              <td>{{ cli.social_reason }}</td>
+                              <td>{{ cli.document }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <br>
+                    </div>
+
+            </div>
+        </sui-tabset>
+
+
+    </div>
+  </div>
+</div>
+

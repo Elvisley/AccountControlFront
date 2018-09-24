@@ -1,0 +1,125 @@
+<app-header></app-header>
+
+<!-- Page container -->
+<div class="page-container">
+
+<!-- Page content -->
+<div class="page-content">
+
+  <div class="sidebar sidebar-main">
+    <app-left-menu></app-left-menu>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- Page header -->
+    <div class="page-header page-header-default">
+      <div class="page-header-content">
+        <div class="page-title">
+          <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Pagina Inicial</span> - Cadastrar Conta</h4>
+        </div>
+      </div>
+    </div>
+    <!-- /page header -->
+    <!-- Content area -->
+    <div class="content">
+
+        <sui-dimmer class="inverted" [(isDimmed)]="segmentDimmed" [isClickable]="false">
+            <div class="ui text loader">Aguarde...</div>
+        </sui-dimmer>
+
+
+        <div class="panel panel-flat">
+            <div class="panel-body">
+              <form  [formGroup]="form" novalidate>
+
+
+
+                <h5>Selecionar Cliente</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Pessoa Fisica</label>
+                                  <input class="form-check-input" type="radio" (change)="changeClient()"  name="person_type" [value]="1" formControlName="person_type"/>
+                              </div>
+                              <div class="col-md-6">
+                                  <label>Pessoa Juridica</label>
+                                  <input class="form-check-input" type="radio" (change)="changeClient()"  name="person_type" [value]="2" formControlName="person_type"/>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12" *ngIf="ListPersonPhysical.length > 0" >
+                        <div class="form-group">
+                          <ng-select [items]="ListPersonPhysical" formControlName="person_id" bindLabel="full_name" bindValue="id" ></ng-select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12"  *ngIf="ListPersonLegal.length > 0">
+                          <div class="form-group">
+                            <ng-select [items]="ListPersonLegal" formControlName="person_id" bindLabel="fantasy_name" bindValue="id" ></ng-select>
+                          </div>
+                        </div>
+
+                </div>
+                <hr>
+
+                <h5>Dados da Conta</h5>
+                <div class="row">
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Nome</label>
+                      <input formControlName="name" type="text" class="form-control" placeholder="Nome da conta">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Valor</label>
+                        <input formControlName="money" type="text" class="form-control" currencyMask placeholder="100.00">
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Status</label>
+                          <ng-select [items]="listStatus" formControlName="status_id" bindLabel="name" bindValue="id" ></ng-select>
+                        </div>
+                      </div>
+
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Conta Principal</label>
+                            <input formControlName="master" (change)="checkedAccountMasterAction()" value="true" type="checkbox">
+                          </div>
+                        </div>
+
+                        <div class="col-md-12" *ngIf="listAccounts.length > 0">
+                          <div class="form-group">
+                            <label>Selecione a conta pai</label>
+                            <ng-select [items]="listAccounts" formControlName="account_parent_id" bindLabel="name" bindValue="id" ></ng-select>
+                          </div>
+                        </div>
+                  </div>
+
+
+                  <div class="text-center">
+                      <button type="submit"  [disabled]="!form.valid" (click)="save()" class="btn btn-success">Cadastrar</button>
+                  </div>
+
+                </form>
+              </div>
+          </div>
+    </div>
+  </div>
+</div>
+
