@@ -2,18 +2,15 @@
 
 <div class="header"><h3>Realizar transferencia</h3></div>
 <div class="content">
+  <sui-dimmer class="inverted" [(isDimmed)]="segmentDimmed" [isClickable]="false">
+      <div class="ui text loader">Aguarde...</div>
+  </sui-dimmer>
 
-
-<sui-dimmer class="inverted" [(isDimmed)]="segmentDimmed" [isClickable]="false">
-    <div class="ui text loader">Aguarde...</div>
-</sui-dimmer>
-
-    <form  [formGroup]="form" novalidate>
+  <form  [formGroup]="form" novalidate>
     <div class="row">
         <div class="form-group">
-
           <div class="col-lg-12">
-              <label for="">Conta Origem</label>
+            <label for="">Conta Origem</label>
             <div>
               <ng-select [items]="ListAccounts" formControlName="account_source" bindLabel="name"></ng-select>
               <div style="clear: both"></div>
@@ -21,11 +18,10 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="form-group">
           <div class="col-lg-12">
-              <label for="">Conta Destino</label>
+            <label for="">Conta Destino</label>
             <div>
               <ng-select [items]="ListAccounts" formControlName="account_destination" bindLabel="name"></ng-select>
               <div style="clear: both"></div>
@@ -33,11 +29,10 @@
           </div>
         </div>
       </div>
-
       <div class="row">
           <div class="form-group">
             <div class="col-lg-12">
-                <label for="">Valor</label>
+              <label for="">Valor</label>
               <div>
                  <input formControlName="money" currencyMask  type="text" class="form-control" placeholder="R$ 100.00">
                 <div style="clear: both"></div>

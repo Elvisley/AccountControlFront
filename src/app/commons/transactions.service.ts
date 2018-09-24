@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { Transactions } from '../models/transactions.model';
 
@@ -11,7 +10,7 @@ export class TransactionsService {
 
   ENDPOINT_TRANSACTIONS_ROOT = '1.0/transactions';
 
-  constructor(private http: HttpClient ,  private router: Router ) { }
+  constructor(private http: HttpClient) { }
 
   getAll() {
     const URL = `${environment.api}${this.ENDPOINT_TRANSACTIONS_ROOT}`;

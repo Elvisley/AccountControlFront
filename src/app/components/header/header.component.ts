@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   private menuUser: boolean;
   private sideBarIsOpened: boolean;
 
-  constructor(private _rendered: Renderer) {
+  constructor() {
 
   }
 

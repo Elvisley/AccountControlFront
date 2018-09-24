@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../../person/person.service';
-import { Router } from '@angular/router';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { SuiModalService } from 'ng2-semantic-ui';
@@ -32,8 +31,7 @@ export class CreateComponent implements OnInit {
 
   constructor(private personService: PersonService,
       private accountService: AccountsService,
-      private statusService: StatusService,
-      private router: Router, private formBuilder: FormBuilder,
+      private statusService: StatusService,private formBuilder: FormBuilder,
     public modalService: SuiModalService, private toastr: ToastrService ) { }
 
   ngOnInit() {

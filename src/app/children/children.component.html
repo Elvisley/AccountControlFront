@@ -37,52 +37,46 @@
                       <button (click)="transferenceAccounts()" class="btn bg-info-700"><i class="glyphicon glyphicon-plus position-left"></i>Transferencia</button>
                   </div>
                 </div>
-
-
-              <div class="table-responsive">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Cliente</th>
-                      <th>Conta Filha</th>
-                      <th>Status</th>
-                      <th>Valor</th>
-                      <th width="20">Contas Filhas</th>
-                      <th>Carga</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let acc of listAccountsChildren">
-                      <td> <button type="button" (click)="editAccount(acc.id,acc.name, acc.status_id)" class="btn btn-info">
-                          <i class="glyphicon glyphicon-pencil"></i>
-                      </button></td>
-                      <td>{{ (acc.person.fantasy_name != null ) ? acc.person.fantasy_name : acc.person.full_name  }}</td>
-                      <td>{{ acc.name }}</td>
-                      <td>{{ acc.status.name }}</td>
-                      <td>{{ acc.money | currency:'BRL':true:'1.2-2'  }}</td>
-                      <td>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Conta Filha</th>
+                        <th>Status</th>
+                        <th>Valor</th>
+                        <th width="20">Contas Filhas</th>
+                        <th>Carga</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let acc of listAccountsChildren">
+                        <td> <button type="button" (click)="editAccount(acc.id,acc.name, acc.status_id)" class="btn btn-info">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button></td>
+                        <td>{{ (acc.person.fantasy_name != null ) ? acc.person.fantasy_name : acc.person.full_name  }}</td>
+                        <td>{{ acc.name }}</td>
+                        <td>{{ acc.status.name }}</td>
+                        <td>{{ acc.money | currency:'BRL':true:'1.2-2'  }}</td>
+                        <td>
                           <a href="/accounts/{{acc.id}}/children" class="btn btn-info">
                             <i class="fa fa-list mr-2"></i>
                           </a>
-                      </td>
-                      <td>
-
+                        </td>
+                        <td>
                           <button type="button" (click)="load(acc.id)" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus"></i>
                           </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               <br>
             </div>
-
-        <app-footer></app-footer>
-
+          <app-footer></app-footer>
         </div>
-
       </div>
     </div>
   </div>

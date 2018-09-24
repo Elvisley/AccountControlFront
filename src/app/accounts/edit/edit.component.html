@@ -1,32 +1,26 @@
 
 <div class="header"><h3>Editar Conta</h3></div>
 <div class="content">
-
-    <form  [formGroup]="form" novalidate>
-      <div class="row">
-
-
-          <div class="form-group">
-            <div class="col-lg-6">
-                <label for="">Nome</label>
-              <div>
-                 <input formControlName="name"  type="text" class="form-control" placeholder="">
-                <div style="clear: both"></div>
-              </div>
-            </div>
-
-
-            <div class="col-lg-6">
-                <label for="">Status</label>
-              <div>
-                <ng-select [items]="ListStatus" formControlName="status_id" bindLabel="name" bindValue="id"></ng-select>
-                <div style="clear: both"></div>
-              </div>
-            </div>
-
+  <form  [formGroup]="form" novalidate>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-lg-6">
+          <label for="">Nome</label>
+          <div>
+              <input formControlName="name"  type="text" class="form-control" placeholder="">
+            <div style="clear: both"></div>
           </div>
         </div>
-    </form>
+        <div class="col-lg-6">
+          <label for="">Status</label>
+          <div>
+            <ng-select [items]="ListStatus" formControlName="status_id" bindLabel="name" bindValue="id"></ng-select>
+            <div style="clear: both"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
 <div class="actions">
     <button style="font-size: 13px;" class="ui red button" (click)="modal.deny(undefined)">Cancel</button>

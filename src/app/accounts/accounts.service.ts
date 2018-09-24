@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { Accounts } from '../models/accounts.model';
 
@@ -11,7 +10,7 @@ export class AccountsService {
 
   ENDPOINT_ACCOUNT_ROOT = '1.0/accounts';
 
-  constructor(private http: HttpClient ,  private router: Router ) { }
+  constructor(private http: HttpClient) { }
 
   getAccountsMaster() {
     const URL = `${environment.api}${this.ENDPOINT_ACCOUNT_ROOT}/master`;

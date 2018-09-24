@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { environment } from '../../environments/environment';
 import { PersonLegal } from '../models/personlegal.model';
 import { PersonPhysical } from '../models/personphysical.model';
 import { PersonService } from './person.service';
@@ -26,7 +23,7 @@ export class PersonComponent implements OnInit {
   ListPersonPhysical: Array<PersonPhysical> = [];
   ListPersonLegal: Array<PersonLegal> = [];
 
-  constructor(private personService: PersonService ,  private router: Router, private formBuilder: FormBuilder,
+  constructor(private personService: PersonService, private formBuilder: FormBuilder,
     public modalService: SuiModalService, private toastr: ToastrService ) { }
 
   ngOnInit() {

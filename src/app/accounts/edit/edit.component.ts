@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SuiModal } from 'ng2-semantic-ui';
-import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AccountsService } from '../accounts.service';
 import { Status } from '../../models/status.model';
 import { StatusService } from '../../commons/status.service';
 
@@ -22,8 +20,7 @@ export class EditComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(public modal: SuiModal<IEditModalContext, void, void>
-    , private service: AccountsService, private route: ActivatedRoute,
+  constructor(public modal: SuiModal<IEditModalContext, void, void>,
     private formBuilder: FormBuilder, private serviceStatus: StatusService) { }
 
   ngOnInit() {

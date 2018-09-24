@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {SuiModal, ComponentModalConfig, ModalSize} from 'ng2-semantic-ui';
-
+import {SuiModal} from 'ng2-semantic-ui';
 import { AccountsService } from '../../accounts/accounts.service';
 import { Accounts } from '../../models/accounts.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ChildrenService } from '../children.service';
-import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -23,9 +20,8 @@ export class TransferenceComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(public modal: SuiModal<void, void, void>
-    , private service: AccountsService, private route: ActivatedRoute,
-    private ccservice: ChildrenService, private formBuilder: FormBuilder) { }
+  constructor(public modal: SuiModal<void, void, void>, 
+    private service: AccountsService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
 

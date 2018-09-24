@@ -25,7 +25,6 @@ export class ChildrenComponent implements OnInit {
   constructor(private ccService: ChildrenService,
      private transactionService: TransactionsService,
      private accountsService: AccountsService,
-     private formBuilder: FormBuilder,
      public modalService: SuiModalService,
      private toastr: ToastrService,
      private route: ActivatedRoute ) { }
@@ -96,9 +95,6 @@ export class ChildrenComponent implements OnInit {
           this.segmentDimmed = false;
         });
       }
-
-
-
     })
     .onDeny(() => console.log(''));
   }

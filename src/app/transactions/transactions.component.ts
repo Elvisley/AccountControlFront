@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountsService } from '../accounts/accounts.service';
 import { TransactionsService } from '../commons/transactions.service';
-import { FormBuilder } from '@angular/forms';
 import { SuiModalService } from 'ng2-semantic-ui';
 import { ToastrService } from 'ngx-toastr';
 import { Transactions } from '../models/transactions.model';
@@ -17,7 +15,7 @@ export class TransactionsComponent implements OnInit {
 
   segmentDimmed: Boolean;
 
-  constructor(private accService: AccountsService , private transactionService: TransactionsService , private formBuilder: FormBuilder,
+  constructor(private transactionService: TransactionsService,
     public modalService: SuiModalService, private toastr: ToastrService ) { }
 
   ngOnInit() {

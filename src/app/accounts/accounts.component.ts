@@ -5,9 +5,8 @@ import { SuiModalService, ModalSize, SuiModal } from 'ng2-semantic-ui';
 import { ToastrService } from 'ngx-toastr';
 import { Accounts } from '../models/accounts.model';
 import { TransactionsService } from '../commons/transactions.service';
-import { EditComponent } from './edit/edit.component';
-import { StatusService } from '../commons/status.service';
 import { AccountsEditModal } from './edit/account.edit.modal';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-accounts',
@@ -20,8 +19,8 @@ export class AccountsComponent implements OnInit {
 
   segmentDimmed: Boolean;
 
-  constructor(private accService: AccountsService , private transactionService: TransactionsService , private formBuilder: FormBuilder,
-    public modalService: SuiModalService, private serviceStatus: StatusService, private toastr: ToastrService ) { }
+  constructor(private accService: AccountsService , private transactionService: TransactionsService,
+    public modalService: SuiModalService, private toastr: ToastrService ) { }
 
   ngOnInit() {
 
@@ -38,7 +37,7 @@ export class AccountsComponent implements OnInit {
   }
 
   deposit(account_destination_id: Number) {
-    const VlrDeposit = prompt('Insira abaixo o valor do deposito', 'Realizar Deposito');
+    const VlrDeposit = prompt('Insira abaixo o valor do deposito', '');
 
     if ( VlrDeposit != null) {
       this.segmentDimmed = true;
