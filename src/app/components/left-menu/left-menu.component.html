@@ -7,15 +7,29 @@
       <div class="category-content no-padding">
 
         <ul class="navigation navigation-main navigation-accordion">
-            <li><a routerLink="/persons"><i class="icon-people"></i> <span>Clientes</span></a></li>
-            <li>
-              <a class="has-ul"><i class="icon-select2"></i> <span>Contas</span></a>
+
+          <li>
+            <a><i class="icon-people"></i> <span>Clientes</span></a>
+            <ul class="hidden-ul" style="display: block;">
+                <li><a routerLink="/persons"><i class="icon-list"></i> <span>Fisico/Juridicos</span></a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a><i class="fa fa-bank"></i> <span>Contas</span></a>
+            <ul class="hidden-ul" style="display: block;">
+                <li><a routerLink="/accounts/created"><i class="fa fa-plus"></i> <span>Cadastrar</span></a></li>
+                <li><a routerLink="/accounts"><i class="fa fa-list"></i> <span>Visualizar</span></a></li>
+            </ul>
+          </li>
+
+          <li>
+              <a><i class="glyphicon glyphicon-transfer"></i> <span>Transacoes</span></a>
               <ul class="hidden-ul" style="display: block;">
-                  <li><a routerLink="/accounts/created"><i class="fa fa-bank"></i> <span>Cadastrar</span></a></li>
-                  <li><a routerLink="/accounts"><i class="fa fa-bank"></i> <span>Visualizar</span></a></li>
+                  <li><a routerLink="/transactions"><i class="icon-list"></i> <span>Historico</span></a></li>
               </ul>
             </li>
-            <li><a routerLink="/transactions"><i class="icon-people"></i> <span>Transacoes</span></a></li>
+
         </ul>
       </div>
     </div>

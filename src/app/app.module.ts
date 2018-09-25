@@ -14,6 +14,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxMaskModule} from 'ngx-mask';
 
 
 import { ToastrModule } from 'ngx-toastr';
@@ -56,6 +57,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     BrowserModule,
     NgSelectModule,
     CurrencyMaskModule,
+    NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,

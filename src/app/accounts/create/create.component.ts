@@ -91,6 +91,7 @@ export class CreateComponent implements OnInit {
   }
 
   changeClient() {
+    this.form.get('person_id').setValue(null);
     if ( this.form.value.person_type === 1) {
       this.getAllPersonPhysical();
       this.ListPersonLegal = [];

@@ -23,9 +23,7 @@ export class AccountsComponent implements OnInit {
     public modalService: SuiModalService, private toastr: ToastrService ) { }
 
   ngOnInit() {
-
     this.segmentDimmed = true;
-
     this.getAccountsMaster();
   }
 

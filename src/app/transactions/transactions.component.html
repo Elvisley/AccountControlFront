@@ -36,8 +36,8 @@
                     <tr>
                       <th>Código</th>
                       <th>Tipo</th>
-                      <th>Conta Destino</th>
                       <th>Conta Origem</th>
+                      <th>Conta Destino</th>
                       <th>Data</th>
                       <th width="20">Valor</th>
                       <th>Estorno</th>
@@ -47,14 +47,14 @@
                     <tr *ngFor="let acc of listTransactions">
                       <td>{{ acc.transaction_code }}</td>
                       <td>{{ acc.transaction_type.name }}</td>
-                      <td>{{ acc.account_destination?.name }} <br>
-                        <span>
-                          {{ (acc.account_destination?.person.fantasy_name != null ) ? acc.account_destination?.person.fantasy_name : acc.account_destination?.person.full_name  }}
-                        </span>
-                      </td>
                       <td>{{ acc.account_source?.name }} <br>
                         <span>
                           {{ (acc.account_source?.person.fantasy_name != null ) ? acc.account_source?.person.fantasy_name : acc.account_source?.person.full_name  }}
+                        </span>
+                      </td>
+                      <td>{{ acc.account_destination?.name }} <br>
+                        <span>
+                          {{ (acc.account_destination?.person.fantasy_name != null ) ? acc.account_destination?.person.fantasy_name : acc.account_destination?.person.full_name  }}
                         </span>
                       </td>
                       <td>{{ acc.created | date }}</td>

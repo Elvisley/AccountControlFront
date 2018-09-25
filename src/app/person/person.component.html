@@ -50,10 +50,10 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label>Documento</label>
-                            <input formControlName="document" type="text" class="form-control" placeholder="CPF">
+                            <input formControlName="document" mask="000.000.000-99" type="text" class="form-control" placeholder="CPF">
                           </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                           <div class="form-group">
                             <label>Data de Nascimento</label>
@@ -84,7 +84,7 @@
                       <tr *ngFor="let cli of ListPersonPhysical">
                         <td>{{ cli.id }}</td>
                         <td>{{ cli.full_name }}</td>
-                        <td>{{ cli.document }}</td>
+                        <td>{{ cli.document | mask: '000.000.000-99' }}</td>
                         <td>{{ cli.birth | date }}</td>
                       </tr>
                     </tbody>
@@ -120,7 +120,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                               <label>Documento</label>
-                              <input formControlName="document" type="text" class="form-control" placeholder="CPF">
+                              <input formControlName="document" mask="00.000.000/0000-99" type="text" class="form-control" placeholder="CNPJ">
                             </div>
                           </div>
                         </div>
@@ -148,7 +148,7 @@
                             <td>{{ cli.id }}</td>
                             <td>{{ cli.fantasy_name }}</td>
                             <td>{{ cli.social_reason }}</td>
-                            <td>{{ cli.document }}</td>
+                            <td>{{ cli.document | mask: '00.000.000/0000-99' }}</td>
                           </tr>
                         </tbody>
                       </table>
